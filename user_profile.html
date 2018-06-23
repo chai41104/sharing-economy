@@ -208,9 +208,7 @@
                 <p class="text-muted">
                 <hr>
 
-                <p class="text-muted">
-                  <span class="label label-success">Start Journey<span>
-                </p>
+                <span class="label label-success" onclick="purchase();">Buy Insurance<span>
               </div>
               <!-- /.card-body -->
             </div>
@@ -534,12 +532,8 @@ function addQuestionElement(questionText, shouldAddYesOrNo = false) {
     return htmlText;
   }
 
-  function claimItem(id) {
-    console.log(id);
-    if(id == 1) {
-      window.location.href = "/iphone8.html";
-    }
-    else window.location.href = "/macbook.html";
+  function purchase() {
+    window.location.href = "/purchase.html";
   }
 </script>
 
