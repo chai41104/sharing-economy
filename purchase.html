@@ -377,7 +377,8 @@
 
   function chatMain(responseText = null) {
 
-    responseText = responseText ? responseText : document.getElementById('inputText').value;
+    responseText = responseText ? responseText : 
+      (document.getElementById('inputText') ? document.getElementById('inputText').value : "");
     removeInput();
     if (responseText !== "") {
       addResponseElement(responseText);
@@ -433,7 +434,7 @@
         `, {})
     }
 
-    addInputElement();
+    // addInputElement();
     state++;
   }
 
