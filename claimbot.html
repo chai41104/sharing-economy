@@ -611,7 +611,7 @@
       }
     }
 
-    function insertMessage(passMsg) {
+    function insertMessage(passMsg, update=true) {
       var msg = $('.message-input').val() || passMsg;
       if ($.trim(msg) == '') {
         return false;
@@ -625,7 +625,9 @@
         // apiMessage(msg)
       }, 0);
 
-      updateState();
+      if (update) {
+        updateState();
+      }
     }
 
     function updateState() {
@@ -639,15 +641,13 @@
         case 3:
           window.setTimeout(function() {sendMessage("Please describe the incident")}, 800)
           break;
-        // case 4:
-        //   break;
         case 4:
-          // insertMessage("<img src='voiceclip.png'></img>")
-          insertMessage("sadfas")
           break;
         case 5:
-          window.setTimeout(function() {sendMessage("Thank you! Your claim is being processed")}, 800)          
-          break;       
+          insertMessage("<img src='voiceclip.jpg' width='40%'></img>", false)
+          window.setTimeout(function() {sendMessage("Thank you, your claim is being processed")}, 1000)
+          // insertMessage("sadfas", false)
+          break;
         default:
           break;
       }
